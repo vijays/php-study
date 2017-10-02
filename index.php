@@ -81,7 +81,17 @@
         $objCar->seat();
         $objCar->accelerate();
         $objCar->brake();
+
+        //Closures with Anonymous functions
+
+        $someString = "<p> This is a test string <p>";
+
+        $someVar = function() use ($someString) 
+                    {
+                        echo "$someString";
+                    };
         
+        $someVar();
 ?>
 </body>    
 </html>
