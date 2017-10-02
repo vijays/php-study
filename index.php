@@ -92,6 +92,24 @@
                     };
         
         $someVar();
+
+        //PDOs
+
+        $db = new PDO('mysql:host=localhost;dbname=php','root','root');
+
+        $insRec = $db->query('INSERT INTO emp VALUES (1, "Ramesh", "Shah", 60000)');
+        $insRec = $db->query('INSERT INTO emp VALUES (2, "Suresh", "Joshi", 50000)');
+        $insRec->execute();
+
+        $selQuery = $db->query('SELECT * FROM emp');
+        echo "emp table has ".$selQuery->rowCount()." records <br>";
+        echo "<pre>";
+        while ($row = $selQuery->fetch(PDO::FETCH_ASSOC)){
+            print_r($row);
+        }
+
+        
+ 
 ?>
 </body>    
 </html>

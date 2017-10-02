@@ -5,5 +5,6 @@ Learning PHP
 - Dependency Injection
 - Traits
 - Closures with Anonymous functions
+- PDOs
 
 
