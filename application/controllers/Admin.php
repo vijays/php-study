@@ -1,8 +1,8 @@
 <?php
 
-class Admin extends CI_Controller {
+class Admin extends MY_Controller {
     
-    public function greet() {
+    public function index() {
         echo "in Admin";
     }
 }
