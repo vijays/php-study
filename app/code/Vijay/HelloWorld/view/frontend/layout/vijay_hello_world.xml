@@ -1,8 +1,14 @@
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">        
-    <referenceBlock name="content">
-        <block 
-            template="content.phtml" 
-            class="Vijay\HelloWorld\Block\Main" 
-            name="blk_vijay_helloworld"/>
-    </referenceBlock>
-</page>  
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+  <head>
+    <link src='Vijay_HelloWorld::js/hello.js'/>
+    <css src='Vijay_HelloWorld::css/hello.css'/>
+  </head>
+  <body>
+      <referenceBlock name="content">
+          <block
+              template="content.phtml"
+              class="Vijay\HelloWorld\Block\Main"
+              name="blk_vijay_helloworld"/>
+      </referenceBlock>
+  </body>
+</page>
