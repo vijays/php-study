@@ -13,21 +13,20 @@ include_once($path);
     <div class="form-group">
       <label for="inputUid" class="col-lg-2 control-label">User Id</label>
       <div class="col-lg-10">
-        <?php echo form_input(['class'=>'form-control', 'placeholder'=>'inputUid']) ?>
+        <?php echo form_input(['name'=>'uid', 'class'=>'form-control', 'placeholder'=>'inputUid']) ?>
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword" class="col-lg-2 control-label">Password</label>
       <div class="col-lg-10">
-        <?php echo form_password(['class'=>'form-control', 'placeholder'=>'inputPassword']) ?>
+        <?php echo form_password(['name'=>'pwd', 'class'=>'form-control', 'placeholder'=>'inputPassword']) ?>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
-        <?php echo form_reset(['class'=>'btn btn-default', 'value'=>'Reset']); ?>
-        <?php echo form_submit(['class'=>'btn btn-primary', 'value'=>'Login']); ?>
+        <?php echo form_reset(['name'=>'reset', 'class'=>'btn btn-default', 'value'=>'Reset']); ?>
+        <?php echo form_submit(['name'=>'submit', 'class'=>'btn btn-primary', 'value'=>'Login']); ?>
       </div>
     </div>
   </fieldset>
 </div>
-
