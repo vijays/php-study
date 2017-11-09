@@ -10,16 +10,36 @@ include_once($path);
 <?php echo form_open('login/admin_login', ['class'=>'form_horizontal']) ?>
   <fieldset>
     <legend>Login</legend>
-    <div class="form-group">
-      <label for="inputUid" class="col-lg-2 control-label">User Id</label>
-      <div class="col-lg-10">
-        <?php echo form_input(['name'=>'uid', 'class'=>'form-control', 'placeholder'=>'inputUid']) ?>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <label for="inputUid" class="col-lg-2 control-label">User Id</label>
+          <div class="col-lg-10">
+            <?php echo form_input(['name'=>'uid', 'class'=>'form-control', 'placeholder'=>'inputUid']) ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <?php
+          // echo form_error('uid',"<p class='text-danger'>","</p>");
+          echo form_error('uid');
+        ?>
       </div>
     </div>
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-      <div class="col-lg-10">
-        <?php echo form_password(['name'=>'pwd', 'class'=>'form-control', 'placeholder'=>'inputPassword']) ?>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+          <div class="col-lg-10">
+            <?php echo form_password(['name'=>'pwd', 'class'=>'form-control', 'placeholder'=>'inputPassword']) ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <?php
+          //echo form_error('pwd',"<p class='text-danger'>","</p>");
+          echo form_error('pwd');
+        ?>
       </div>
     </div>
     <div class="form-group">
@@ -30,3 +50,7 @@ include_once($path);
     </div>
   </fieldset>
 </div>
+
+<?php
+  echo validation_errors();
+?>
