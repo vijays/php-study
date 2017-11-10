@@ -15,13 +15,13 @@ include_once($path);
         <div class="form-group">
           <label for="inputUid" class="col-lg-2 control-label">User Id</label>
           <div class="col-lg-10">
-            <?php echo form_input(['name'=>'uid', 'class'=>'form-control', 'placeholder'=>'inputUid']) ?>
+            <?php echo form_input(['name'=>'uid', 'class'=>'form-control', 'placeholder'=>'inputUid', 'value'=>set_value('uid')]) ?>
           </div>
         </div>
       </div>
       <div class="col-lg-6">
         <?php
-          // echo form_error('uid',"<p class='text-danger'>","</p>");
+          //echo form_error('uid',"<p class='text-danger'>","</p>");
           echo form_error('uid');
         ?>
       </div>
@@ -31,7 +31,7 @@ include_once($path);
         <div class="form-group">
           <label for="inputPassword" class="col-lg-2 control-label">Password</label>
           <div class="col-lg-10">
-            <?php echo form_password(['name'=>'pwd', 'class'=>'form-control', 'placeholder'=>'inputPassword']) ?>
+            <?php echo form_password(['name'=>'pwd', 'class'=>'form-control', 'placeholder'=>'inputPassword', 'value'=>set_value('pwd')]) ?>
           </div>
         </div>
       </div>
@@ -52,5 +52,5 @@ include_once($path);
 </div>
 
 <?php
-  echo validation_errors();
+  //echo validation_errors();
 ?>
