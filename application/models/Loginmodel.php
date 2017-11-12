@@ -8,7 +8,7 @@
                     ->get('users');
 
       if ( $q->num_rows() ){
-        return TRUE;
+        return $q->row()->id;
       } else{
         return FALSE;
       }

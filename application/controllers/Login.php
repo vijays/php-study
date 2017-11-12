@@ -19,14 +19,19 @@ class Login extends MY_Controller {
         //Success
         $userid = $this->input->post('uid');
         $passwd = $this->input->post('pwd');
-        echo "userid: $userid and passwd: $passwd";
+        //echo "userid: $userid and passwd: $passwd";
 
         $this->load->model('Loginmodel');
 
-        if ($this->Loginmodel->login_validation($userid, $passwd))
-        {
+        $login_id = $this->Loginmodel->login_validation($userid, $passwd);
+
+        if ( $login_id ) {
           //success
-          echo "Password match";
+          //echo "Password match";
+          $this->load->library('session');
+          $this->session->set_userdata('rowid', $login_id);
+          //$this->load->view('admin/dashboard');
+          return redirect('Admin/dashboard');
         }
         else {
           //failed

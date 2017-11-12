@@ -1,7 +1,7 @@
 <?php
 
 $path = $_SERVER['DOCUMENT_ROOT'];
-$path .= '/ci_blog_app/application/views/include/header.php';
+$path .= '/ci_blog_app/application/views/include/user_header.php';
 include_once($path);
 
 ?>
@@ -15,7 +15,7 @@ include_once($path);
         <div class="form-group">
           <label for="inputUid" class="col-lg-2 control-label">User Id</label>
           <div class="col-lg-10">
-            <?php echo form_input(['name'=>'uid', 'class'=>'form-control', 'placeholder'=>'inputUid', 'value'=>set_value('uid')]) ?>
+            <?php echo form_input(['name'=>'uid', 'class'=>'form-control', 'placeholder'=>'Input User Id', 'value'=>set_value('uid')]) ?>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@ include_once($path);
         <div class="form-group">
           <label for="inputPassword" class="col-lg-2 control-label">Password</label>
           <div class="col-lg-10">
-            <?php echo form_password(['name'=>'pwd', 'class'=>'form-control', 'placeholder'=>'inputPassword', 'value'=>set_value('pwd')]) ?>
+            <?php echo form_password(['name'=>'pwd', 'class'=>'form-control', 'placeholder'=>'Input Password', 'value'=>set_value('pwd')]) ?>
           </div>
         </div>
       </div>

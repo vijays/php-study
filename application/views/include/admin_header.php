@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?= link_tag('assets/css/bootstrap.min.css') ?>
-    <title>Articles List</title>
+    <title>Admin Dashboard</title>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -17,18 +17,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Blog App</a>
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form class="navbar-form navbar-left" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Login</a></li>
+              <li><a href="#">Logout</a></li>
             </ul>
           </div>
         </div>
