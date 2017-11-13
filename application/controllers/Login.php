@@ -28,8 +28,8 @@ class Login extends MY_Controller {
         if ( $login_id ) {
           //success
           //echo "Password match";
-          $this->load->library('session');
-          $this->session->set_userdata('rowid', $login_id);
+          //$this->load->library('session');
+          $this->session->set_userdata('user_id', $login_id);
           //$this->load->view('admin/dashboard');
           return redirect('Admin/dashboard');
         }
