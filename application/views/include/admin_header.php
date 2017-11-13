@@ -21,7 +21,8 @@
           </div>
 
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Logout</a></li>
+              <!-- <li><a href="<?php echo base_url('Login/admin_logout')?>">Logout</a></li> -->
+              <li><?= anchor('Login/admin_logout','Logout'); ?></li>
             </ul>
           </div>
         </div>
