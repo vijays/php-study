@@ -3,8 +3,12 @@
 class Login extends MY_Controller {
 
     public function index() {
-        $this->load->helper('form');
-        $this->load->view('admin/admin_login');
+
+      if ( $this->session->userdata('user_id') )
+        return redirect('Admin/dashboard');
+
+      $this->load->helper('form');
+      $this->load->view('admin/admin_login');
     }
 
     public function admin_login(){
