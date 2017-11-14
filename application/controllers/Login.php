@@ -35,7 +35,9 @@ class Login extends MY_Controller {
         }
         else {
           //failed
-          echo "Password does not match";
+          //echo "Password does not match";
+          $this->session->set_flashdata('login_failed', 'Invalid user id / password');
+          return redirect('Login');
         }
       }
       else{

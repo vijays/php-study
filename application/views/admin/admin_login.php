@@ -10,6 +10,15 @@ include_once($path);
 <?php echo form_open('login/admin_login', ['class'=>'form_horizontal']) ?>
   <fieldset>
     <legend>Login</legend>
+    <?php if ($error = $this->session->flashdata('login_failed')): ?>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="alert alert-dismissible alert-danger">
+            <?php echo $error; ?>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
     <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
