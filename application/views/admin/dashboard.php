@@ -7,6 +7,11 @@ include_once($path);
 ?>
 
 <div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-6">
+      <!-- a href="<?php echo base_url('Admin/add_article')?>" class="btn btn-primary">Add Article</a -->
+      <?= anchor('Admin/add_article', 'Add Article', ['class'=>'btn btn-lg btn-primary pull-right']); ?>
+  </div>
   <table class="table">
     <thead>
       <th Sr. No. />
