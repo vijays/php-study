@@ -12,10 +12,14 @@ include_once($path);
       <!-- a href="<?php echo base_url('Admin/add_article')?>" class="btn btn-primary">Add Article</a -->
       <?= anchor('Admin/add_article', 'Add Article', ['class'=>'btn btn-lg btn-primary pull-right']); ?>
   </div>
-  <?php if($feedback = $this->session->flashdata('feedback')): ?>
+  <?php if($feedback = $this->session->flashdata('feedback')):
+          $feedback_class = $this->session->flashdata('feedback_class');
+  ?>
     <div class="row">
-      <div class="col-lg-6 col-lg-offset-6">
+      <div class="col-lg-3 col-lg-offset-1">
+        <div class="alert alert-dismissible <?= $feedback_class ?> ">
           <?= $feedback ?>
+        </div>
       </div>
     </div>
   <?php endif; ?>
