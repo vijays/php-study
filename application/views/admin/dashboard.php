@@ -12,6 +12,13 @@ include_once($path);
       <!-- a href="<?php echo base_url('Admin/add_article')?>" class="btn btn-primary">Add Article</a -->
       <?= anchor('Admin/add_article', 'Add Article', ['class'=>'btn btn-lg btn-primary pull-right']); ?>
   </div>
+  <?php if($feedback = $this->session->flashdata('feedback')): ?>
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-6">
+          <?= $feedback ?>
+      </div>
+    </div>
+  <?php endif; ?>
   <table class="table">
     <thead>
       <th Sr. No. />

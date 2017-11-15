@@ -43,12 +43,13 @@ class Admin extends MY_Controller {
       $this->load->model('Articlesmodel', 'articles');
       if ($this->articles->add_article($posted_vars)) {
         //insert successful
-        echo "Insert successful" ;
+        $this->session->set_flashdata('feedback','Article added successfully.');
       }
       else {
         //insert failed
-        echo "Insert failed" ;
+        $this->session->set_flashdata('feedback','Failed to insert article, please try again.');
       }
+      return redirect('Admin/dashboard');
     }
     else {
       return redirect('Admin/add_article');
