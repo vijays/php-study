@@ -67,6 +67,18 @@ class Admin extends MY_Controller {
   }
 
   public function delete_article() {
+    $article_id = $this->input->post('article_id');
+    $this->load->model('Articlesmodel', 'articles');
+
+    if ($this->articles->delete_article($article_id)) {
+      //delete successful
+      $this->session->set_flashdata('feedback','Article deleted successfully.');
+    }
+    else {
+      //delete failed
+      $this->session->set_flashdata('feedback','Failed to delete article, please try again.');
+    }
+    return redirect('Admin/dashboard');
 
   }
 

@@ -29,6 +29,11 @@ class Articlesmodel extends CI_Model {
   public function update_article( $article_id, $article) {
     return $this->db->update('articles', $article, "id=$article_id");
   }
+
+  public function delete_article( $article_id) {
+    return $this->db->delete('articles', "id=$article_id");
+  }
+
 }
 
 ?>

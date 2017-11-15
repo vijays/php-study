@@ -33,10 +33,20 @@ include_once($path);
               <td><?= $article->id ?></td>
               <td><?= $article->title ?></td>
               <td>
-                <?= anchor('Admin/edit_article/'.$article->id, 'Edit', 'class="btn btn-primary"'); ?>
-                <?= anchor('Admin/delete_article/'.$article->id, 'Delete', 'class="btn btn-danger"'); ?>
-                <!-- a href="" class="btn btn-primary">Edit</a -->
-                <!-- a href="" class="btn btn-danger">Delete</a -->
+                <div class="row">
+                  <div class="col-lg-1">
+                    <?= anchor('Admin/edit_article/'.$article->id, 'Edit', 'class="btn btn-primary"'); ?>
+                  </div>
+                    <!-- ?= anchor('Admin/delete_article/'.$article->id, 'Delete', 'class="btn btn-danger"'); ? -->
+                    <!-- a href="" class="btn btn-primary">Edit</a -->
+                    <!-- a href="" class="btn btn-danger">Delete</a -->
+                  <div class="col-lg-1">
+                    <?= form_open('Admin/delete_article', ['class'=>'form_horizontal']); ?>
+                    <?= form_hidden('article_id', $article->id); ?>
+                    <?= form_submit(['name'=>'submit', 'value'=>'Delete', 'class'=>'btn btn-danger']); ?>
+                    <?= form_close(); ?>
+                  </div>
+              </div>
               </td>
             </tr>
             <?php
