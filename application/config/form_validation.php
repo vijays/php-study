@@ -1,6 +1,7 @@
 <?php
 
 $config = [
+
             'add_article_rules' => [
                                       [
                                         'field' => 'title',

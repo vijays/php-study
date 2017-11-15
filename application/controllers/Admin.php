@@ -56,12 +56,40 @@ class Admin extends MY_Controller {
     }
   }
 
-  public function edit_article() {
-
+  public function edit_article($article_id) {
+    $this->load->model('Articlesmodel', 'articles');
+    $data['article'] = $this->  articles->find_article($article_id);
+    //echo "<pre>";
+    //print_r($article);
+    $this->load->helper('form');
+//    $this->load->view('admin/edit_article', ['article', $article]);
+    $this->load->view('admin/edit_article',$data);
   }
 
   public function delete_article() {
 
+  }
+
+  public function update_article() {
+    $this->load->library('form_validation');
+    if ( $this->form_validation->run('add_article_rules')) {
+      $posted_data = $this->input->post();
+      $article_id = $posted_data['article_id'];
+      unset($posted_data['submit'], $posted_data['article_id']);
+      $this->load->model('Articlesmodel', 'articles');
+      if ($this->articles->update_article($article_id, $posted_data)) {
+        //insert successful
+        $this->session->set_flashdata('feedback','Article updated successfully.');
+      }
+      else {
+        //insert failed
+        $this->session->set_flashdata('feedback','Failed to update article, please try again.');
+      }
+      return redirect('Admin/dashboard');
+    }
+    else {
+      return redirect('Admin/edit_article'.$article_id);
+    }
   }
 }
 
