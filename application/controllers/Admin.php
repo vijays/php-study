@@ -38,7 +38,17 @@ class Admin extends MY_Controller {
   public function store_article() {
     $this->load->library('form_validation');
     if ( $this->form_validation->run('add_article_rules')) {
-
+      $posted_vars = $this->input->post();
+      unset($posted_vars['submit']);
+      $this->load->model('Articlesmodel', 'articles');
+      if ($this->articles->add_article($posted_vars)) {
+        //insert successful
+        echo "Insert successful" ;
+      }
+      else {
+        //insert failed
+        echo "Insert failed" ;
+      }
     }
     else {
       return redirect('Admin/add_article');

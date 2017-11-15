@@ -8,7 +8,7 @@ include_once($path);
 
 <div class="container">
 <?php echo form_open('Admin/store_article', ['class'=>'form_horizontal']); ?>
-<?php echo form_hidden('user_id', $this->session->userdata('user_id')); ?>
+<?php echo form_hidden('uid', $this->session->userdata('user_id')); ?>
   <fieldset>
     <legend>Add Article</legend>
     <?php if ($error = $this->session->flashdata('login_failed')): ?>
@@ -25,7 +25,7 @@ include_once($path);
         <div class="form-group">
           <label for="inputArticleTitle" class="col-lg-4 control-label">Article Title</label>
           <div class="col-lg-8">
-            <?php echo form_input(['name'=>'article_title', 'class'=>'form-control', 'placeholder'=>'Input Article Title', 'value'=>set_value('article_title')]) ?>
+            <?php echo form_input(['name'=>'title', 'class'=>'form-control', 'placeholder'=>'Input Article Title', 'value'=>set_value('article_title')]) ?>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@ include_once($path);
         <div class="form-group">
           <label for="inputArticleBody" class="col-lg-4 control-label">Article Body</label>
           <div class="col-lg-8">
-            <?php echo form_textarea  (['name'=>'article_body', 'class'=>'form-control', 'placeholder'=>'Input Article Body', 'value'=>set_value('article_body')]) ?>
+            <?php echo form_textarea  (['name'=>'body', 'class'=>'form-control', 'placeholder'=>'Input Article Body', 'value'=>set_value('article_body')]) ?>
           </div>
         </div>
       </div>

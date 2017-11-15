@@ -14,6 +14,10 @@ class Articlesmodel extends CI_Model {
 
     return $query->result();
   }
+
+  public function add_article($array) {
+    return $this->db->insert('articles', $array);
+  }
 }
 
 ?>
