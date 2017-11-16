@@ -31,8 +31,8 @@ include_once($path);
     </thead>
     <tbody>
       <?php
-        if ( count($articleslist) ) {
-          foreach ($articleslist as $article) { ?>
+        if ( count($articleslist) ):
+          foreach ($articleslist as $article): ?>
             <tr>
               <td><?= $article->id ?></td>
               <td><?= $article->title ?></td>
@@ -54,13 +54,12 @@ include_once($path);
               </td>
             </tr>
             <?php
-           }
-        }
-        else {
+          endforeach;
+        else:
           echo "No articles found!";
-        }
+        endif;
       ?>
     </tbody>
   </table>
-  <?= $this->pagination->create_links(); ?>
+  <?php $this->pagination->create_links(); ?>
 </div>
