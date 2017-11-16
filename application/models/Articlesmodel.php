@@ -2,7 +2,9 @@
 
 class Articlesmodel extends CI_Model {
 
-  function list_articles() {
+  private $_num_rows = 0;
+
+  function list_articles( $limit, $offset ) {
 
     $user_id = $this->session->userdata('user_id');
 
@@ -10,7 +12,10 @@ class Articlesmodel extends CI_Model {
                       ->select('id, title')
                       ->from('articles')
                       ->where('uid', $user_id)
+                      ->limit($limit, $offset)
                       ->get();
+
+    $this->_num_rows = $query->num_rows();
 
     return $query->result();
   }
@@ -32,6 +37,10 @@ class Articlesmodel extends CI_Model {
 
   public function delete_article( $article_id) {
     return $this->db->delete('articles', "id=$article_id");
+  }
+
+  public function num_rows() {
+    return $this->_num_rows;
   }
 
 }
