@@ -17,16 +17,21 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Blog App</a>
+            <a class="navbar-brand" href="<?php echo base_url('User')?>">My Blog</a>
           </div>
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form class="navbar-form navbar-left" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+            <!-- form class="navbar-form navbar-left" role="search" -->
+              <!-- div class="form-group" -->
+                <!-- input type="text" class="form-control" placeholder="Search" name="query" -->
+              <!-- /div -->
+              <!-- button type="submit" class="btn btn-default">Submit</button -->
+            <!-- /form -->
+            <?php echo form_open('user/search', ['class'=>"navbar-form navbar-left", 'role'=>"search"]) ?>
+            <?php echo form_input(['id'=>"search", 'name'=>'query', 'value'=>set_value('query'), 'class'=>'form_control']) ?>
+            <?php echo form_submit(['name'=>'submit', 'value'=>'Search', 'class'=>'btn btn-success']); ?>
+            <?php echo form_close(); ?>
+            <?php echo form_error('query', "<p class='nav-bar-text text-danger'>", "</p>"); ?>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="<?php echo base_url('Login')?>">Login</a></li>
             </ul>

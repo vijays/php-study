@@ -60,6 +60,13 @@ class Articlesmodel extends CI_Model {
   public function count_of_all_articles() {
     return $this->_count_of_all_articles;
   }
+
+  public function search($query) {
+    $q = $this->db->from('articles')
+                  ->like('title', $query)
+                  ->get();
+    return $q->result();
+  }
 }
 
 ?>

@@ -35,5 +35,20 @@ class User extends MY_Controller {
       //$this->load->helper('html');
       $this->load->view('user/articles_list', compact('articleslist'));
     }
+
+    public function search() {
+      //$this->load->library('form_validation');
+      //$this->form_validation->set_rules('query', 'Query');
+
+      //if ( !$this->form_validation->run() ) {
+        //$this->index() ;
+      //}
+      $query = $this->input->post('query');
+
+      $this->load->model('Articlesmodel', 'articles');
+      $articleslist = $this->articles->search($query);
+      $this->load->view('user/search_results', compact('articleslist'));
+
+    }
 }
 ?>

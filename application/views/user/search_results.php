@@ -7,7 +7,7 @@ include_once($path);
 ?>
 
 <div class="container">
-  <h3>Articles</h3>
+  <h3>Search Results</h3>
   <hr>
   <table class="table">
     <thead>
