@@ -61,5 +61,5 @@ include_once($path);
       ?>
     </tbody>
   </table>
-  <?php $this->pagination->create_links(); ?>
+  <?php echo $this->pagination->create_links(); ?>
 </div>

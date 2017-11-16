@@ -21,7 +21,7 @@ include_once($path);
           foreach ($articleslist as $article): ?>
           <tr>
             <td><?= $article->id ?></td>
-            <td><?= $article->title ?></td>
+            <td><?= anchor("User/article/{$article->id}", $article->title) ?></td>
           </tr>
           <?php endforeach;
         else:
@@ -29,5 +29,5 @@ include_once($path);
         endif; ?>
     </tbody>
   </table>
-
+  <?php $this->pagination->create_links(); ?>
 </div>

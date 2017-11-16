@@ -6,7 +6,7 @@ class User extends MY_Controller {
 
       $this->load->model('Articlesmodel', 'articles');
 
-      $this->load->library('pagination');
+      //$this->load->library('pagination');
 
       $config = [
         'base_url' => base_url('User/index'),
@@ -29,11 +29,10 @@ class User extends MY_Controller {
       $this->pagination->initialize($config);
 
       $articleslist = $this->articles->list_all_articles( $config['per_page'], $this->uri->segment(3));
-
       //moved autoload helper url, html in config
       //$this->load->helper('url');
       //$this->load->helper('html');
-      $this->load->view('user/articles_list', compact('articleslist'));
+      $this->load->view('user/articles_list', ['articleslist'=>$articleslist]);
     }
 
     public function search() {
@@ -41,14 +40,19 @@ class User extends MY_Controller {
       //$this->form_validation->set_rules('query', 'Query');
 
       //if ( !$this->form_validation->run() ) {
-        //$this->index() ;
+        //return $this->index() ;
       //}
       $query = $this->input->post('query');
 
       $this->load->model('Articlesmodel', 'articles');
       $articleslist = $this->articles->search($query);
       $this->load->view('user/search_results', compact('articleslist'));
+    }
 
+    public function article( $article_id ) {
+      $this->load->model('Articlesmodel', 'articles');
+      $article = $this->articles->find_article( $article_id );
+      $this->load->view('user/article_detail', compact('article'));
     }
 }
 ?>
